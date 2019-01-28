@@ -3,19 +3,19 @@ provider "aws" {
   version = "~> 1.57.0"
 }
 
-//terraform {
-//  backend "s3" {
-//    bucket = "mc-tfstate"
-//    key    = "demo.tfstate"
-//    region = "us-east-1"
-//  }
-//}
+# TODO - Read https://www.terraform.io/docs/backends/types/s3.html for information on how to organize and approaches to locking (dynamodb)
+terrterraform {
+  backend "s3" {
+    bucket = "TODO - your bucket name"
+    key    = "TODO - your account name.tfstate"
+    region = "us-east-1"
+  }
+}
 
 module "ops_users" {
   source = "modules/users"
 
   ops_users = [
-//    "ecurbo",
-    "fboyd",
+    "TODO - your users"
   ]
 }
